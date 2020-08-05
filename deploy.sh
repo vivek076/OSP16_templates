@@ -1,0 +1,13 @@
+openstack overcloud deploy \
+--templates \
+--libvirt-type qemu \
+--templates \
+-e /home/stack/templates/node-info.yaml \
+-r /usr/share/openstack-tripleo-heat-templates/roles_data.yaml \
+-e /home/stack/containers-prepare-parameter.yaml \
+-e /usr/share/openstack-tripleo-heat-templates/environments/disable-telemetry.yaml \
+-e /usr/share/openstack-tripleo-heat-templates/environments/network-isolation.yaml \
+-e /usr/share/openstack-tripleo-heat-templates/environments/services/neutron-ovs.yaml \
+-e /home/stack/templates/network-environment.yaml  \
+--ntp-server 192.168.24.1 \
+--timeout 100
